@@ -1,6 +1,6 @@
-FROM alpine:3.7
+FROM ubuntu:18.04
 
 MAINTAINER Martin <martin@hellstrom.it>
 
-RUN apk add --no-cache --update openssl && rm -rf /var/cache/apk/*
-ENTRYPOINT ["/bin/ash"]
+RUN apt update && apt install wget curl && rm -rf /var/cache/apt/*
+ENTRYPOINT ["/bin/dash"]
